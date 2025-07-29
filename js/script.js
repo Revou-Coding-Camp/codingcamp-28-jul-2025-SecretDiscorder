@@ -1,43 +1,70 @@
 
-document.addEventListener("DOMContentLoaded", () => {
-  const name = prompt("Masukkan nama Anda:");
-  if (name) {
-    document.getElementById("welcome-message1").textContent = `Hi ${name}, Welcome to Website`;
-  }
-});
+  document.addEventListener("DOMContentLoaded", function () {
+    const nameInput = document.getElementById("name");
+    const welcomeNameEl = document.getElementById("welcomeName");
+    const welcomeMessage = document.querySelector("#welcome-message1");
+    const form = document.getElementById("messageForm");
+    const infoBox = document.getElementById("infoBox");
 
-const form = document.getElementById('messageForm');
-const output = document.getElementById('output');
+    // Prompt sapaan pengguna
+    const promptName = prompt("Masukkan nama Anda:");
+    if (welcomeNameEl) {
+      welcomeNameEl.textContent = promptName || "Pengunjung";
+    }
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
+    // Update sapaan secara live saat mengetik
+    nameInput.addEventListener("input", () => {
+      const nameVal = nameInput.value.trim();
+      if (nameVal.length > 0) {
+        welcomeMessage.textContent = `Hi ${nameVal}, Welcome to Website`;
+      } else {
+        welcomeMessage.textContent = `Hi ${promptName || "Pengunjung"}, Welcome to Website`;
+      }
+    });
 
-  output.textContent = '';
+    // Handler form submit
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-  const name = form.name.value.trim();
-  const dob = form.dob.value;
-  const gender = form.gender.value;
-  const message = form.message.value.trim();
+      const data = new FormData(form);
+      const name = data.get("name");
+      const birthdateVal = data.get("dob");
+      const birthdate = new Date(birthdateVal);
+      const gender = data.get("gender");
+      const message = data.get("message");
 
-  let errors = [];
-  if(name === '') errors.push('Nama harus diisi.');
-  if(dob === '') errors.push('Tanggal lahir harus diisi.');
-  if(!gender) errors.push('Jenis kelamin harus dipilih.');
-  if(message === '') errors.push('Pesan harus diisi.');
+      if (!gender) {
+        alert("Silakan pilih jenis kelamin.");
+        return;
+      }
 
-  if(errors.length > 0) {
-    output.innerHTML = 'Error:\n' + errors.join('\n');
-    return;
-  }
+      // Format tanggal
+      const day = String(birthdate.getDate()).padStart(2, "0");
+      const month = String(birthdate.getMonth() + 1).padStart(2, "0");
+      const year = birthdate.getFullYear();
+      const formattedDate = `${day}/${month}/${year}`;
 
-  const now = new Date();
-  const currentTime = now.toLocaleString();
+      // Tampilkan hasil di infoBox
+      infoBox.innerHTML = `
+        <div class="mb-1 font-bold">Current time :</div>
+        <div id="currentTime" class="mb-3">${new Date().toString()}</div>
+        <div>
+          <b>Nama</b> : ${name}<br />
+          <b>Tanggal Lahir</b> : ${formattedDate}<br />
+          <b>Jenis Kelamin</b> : ${gender}<br />
+          <b>Pesan</b> : ${message}
+        </div>
+      `;
+    });
 
-  output.innerHTML =
-    `Pesan berhasil dikirim!\n\n` +
-    `Waktu submit : ${currentTime}\n` +
-    `Nama         : ${name}\n` +
-    `Tanggal Lahir: ${dob}\n` +
-    `Jenis Kelamin: ${gender}\n` +
-    `Pesan        : ${message}\n\n`;
-});
+    // Update jam setiap detik
+    function updateTime() {
+      const timeNow = new Date().toString();
+      const timeEl = document.getElementById("currentTime");
+      if (timeEl) {
+        timeEl.textContent = timeNow;
+      }
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  });
