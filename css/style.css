@@ -1,0 +1,262 @@
+body {
+  background-color: #FFFFE0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #FFFFE0, #e0f7ff);
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+nav .logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 16px;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+nav ul li {
+  width: auto;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #0a3d62;
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  display: block;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+    margin: 0;
+    gap: 10px;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    width: 100%;
+    padding: 10px 16px;
+  }
+}
+
+
+section.card {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+}
+
+section.card h1,
+section.card h2,
+section.card h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+section.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* HEADMASTERS */
+.headmasters-list {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.headmaster-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 220px;
+  padding: 16px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.headmaster-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.headmaster-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.headmaster-card h3 {
+  margin: 0 0 6px 0;
+  color: #0a3d62;
+  font-size: 20px;
+}
+
+.headmaster-card p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* MESSAGE SECTION */
+.message-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.message-form {
+  flex: 1 1 100%;
+  max-width: 500px;
+}
+
+.message-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #0a3d62;
+}
+
+.message-form input[type="text"],
+.message-form input[type="date"],
+.message-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.message-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.gender-group {
+  margin-bottom: 16px;
+}
+
+.gender-group label {
+  font-weight: normal;
+  margin-right: 12px;
+}
+
+.message-form button {
+  background-color: #0a3d62;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.message-form button:hover {
+  background-color: #083053;
+}
+
+.output-box {
+  flex: 1 1 100%;
+  max-width: 500px;
+  background: #e0f7ff;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  font-family: monospace, monospace;
+  color: #033e6b;
+  overflow-y: auto;
+  min-height: 300px;
+}
+
+footer {
+  text-align: right;
+  padding: 10px 20px;
+  color: #444;
+}
+
+/* MEDIA QUERY for mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .message-section {
+    flex-direction: column;
+  }
+
+  .message-form,
+  .output-box {
+    max-width: 100%;
+  }
+}

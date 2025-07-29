@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>My Website</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav>
+    <img src="https://storage.googleapis.com/danacita-website-v3-prd/website_v3/images/Logo-RevoU-5_1.original.png" height="70px" width="70px" alt="Logo" class="logo" />
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="profile.html">Our Profile</a></li>
+      <li><a href="https://github.com/SecretDiscorder">Portfolio</a></li>
+      <li><a href="./index.html#messageForm">Message Us</a></li>
+    </ul>
+  </nav>
+
+  <section class="card">
+    <h1 id="welcome-message1">Hi Harfi, Welcome to Website</h1>
+    <h4>Ini adalah website latihan pertama</h4>
+    <img src="https://i.etsystatic.com/30727073/r/il/4406e3/5942605468/il_340x270.5942605468_ch9o.jpg" alt="Sample Image" />
+  </section>
+  <section class="card">
+    <h1 id="welcome-message">Our Headquarter</h1>
+  <section class="headmasters-list">
+    <div class="headmaster-card">
+      <img src="https://upload.wikimedia.org/wikipedia/id/thumb/b/b1/Merdeka_Square_Monas_02.jpg/250px-Merdeka_Square_Monas_02.jpg" alt="Jakarta" />
+      <h3>Jakarta</h3>
+      <p>Headquarter</p>
+    </div>
+    <div class="headmaster-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Gedung_Sate_Oktober_2024_-_Rahmatdenas.jpg/250px-Gedung_Sate_Oktober_2024_-_Rahmatdenas.jpg" alt="Bandung" />
+      <h3>Bandung</h3>
+      <p>Headquarter</p>
+    </div>
+    <div class="headmaster-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Patung_suroboyo.jpg/669px-Patung_suroboyo.jpg" alt="Surabaya" />
+      <h3>Surabaya</h3>
+      <p>Headquarter</p>
+    </div>
+  </section>
+  </section>
+  <section class="card">
+    <h1 id="welcome-message">Message Us</h1>
+  <section class="message-section">
+    <form id="messageForm" class="message-form" novalidate>
+      <label for="name">Nama:</label>
+      <input type="text" id="name" name="name" required placeholder="Masukkan nama" />
+
+      <label for="dob">Tanggal Lahir:</label>
+      <input type="date" id="dob" name="dob" required />
+
+      <div class="gender-group">
+        <label>Jenis Kelamin:</label>
+        <label><input type="radio" name="gender" value="Laki-laki" required /> Laki-laki</label>
+        <label><input type="radio" name="gender" value="Perempuan" /> Perempuan</label>
+        <label><input type="radio" name="gender" value="Lainnya" /> Lainnya</label>
+      </div>
+
+      <label for="message">Pesan:</label>
+      <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+
+      <button type="submit">Kirim</button>
+    </form>
+
+    <div class="output-box" id="output">
+      <!-- Output hasil validasi akan muncul di sini -->
+      <em>Hasil validasi dan pesan akan muncul di sini setelah submit.</em>
+    </div>
+  </section>
+  </section>
+<script>
+
+  const nameInput = document.getElementById('name');
+  const welcomeMessage = document.querySelector('#welcome-message1');
+
+  // Ganti teks sambutan saat halaman dimuat
+  document.addEventListener("DOMContentLoaded", () => {
+    const nameVal = nameInput.value.trim();
+    if (nameVal.length > 0) {
+      welcomeMessage.textContent = `Hi ${nameVal}, Welcome to Website`;
+    }
+  });
+
+  // Ganti teks sambutan saat user mengetik
+  nameInput.addEventListener('input', () => {
+    const nameVal = nameInput.value.trim();
+    if (nameVal.length > 0) {
+      welcomeMessage.textContent = `Hi ${nameVal}, Welcome to Website`;
+    } else {
+      welcomeMessage.textContent = `Hi Harfi, Welcome to Website`;
+    }
+  });
+
+  const form = document.getElementById('messageForm');
+  const output = document.getElementById('output');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    output.textContent = '';
+
+    const name = form.name.value.trim();
+    const dob = form.dob.value;
+    const gender = form.gender.value;
+    const message = form.message.value.trim();
+
+    let errors = [];
+    if(name === '') errors.push('Nama harus diisi.');
+    if(dob === '') errors.push('Tanggal lahir harus diisi.');
+    if(!gender) errors.push('Jenis kelamin harus dipilih.');
+    if(message === '') errors.push('Pesan harus diisi.');
+
+    if(errors.length > 0) {
+      output.innerHTML = 'Error:\n' + errors.join('\n');
+      return;
+    }
+
+    const now = new Date();
+    const currentTime = now.toLocaleString();
+
+    output.innerHTML =
+      `Pesan berhasil dikirim!\n\n` +
+      `Waktu submit : ${currentTime}\n` +
+      `Nama         : ${name}\n` +
+      `Tanggal Lahir: ${dob}\n` +
+      `Jenis Kelamin: ${gender}\n` +
+      `Pesan        : ${message}\n\n`;
+  });
+</script>
+
+</body>
+  <footer>Created by Bima Adhi Pratama Kharis</footer>
+</html>
