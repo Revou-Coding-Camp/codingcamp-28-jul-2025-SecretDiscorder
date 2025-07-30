@@ -319,3 +319,11 @@ footer {
     padding: 24px;
   }
 }
+
+.banner-image.full-banner {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain; /* atau: cover, jika ingin potong pinggir */
+  margin: 20px 0;
+  display: block;
+}
