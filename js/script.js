@@ -1,11 +1,15 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   // Prompt welcome message
   const name = prompt("Masukkan nama Anda:");
   if (name) {
     document.getElementById("welcome-message1").textContent = `Hi ${name}, Welcome to Website`;
   }
+  const btn = document.getElementById('hamburgerBtn');
+  const menu = document.querySelector('nav ul');
 
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
   const form = document.getElementById('messageForm');
   const output = document.getElementById('infoBox'); // ini harus sama dengan id di HTML
 
