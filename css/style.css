@@ -418,3 +418,14 @@ body {
   min-width: 320px; 
   overflow-x: hidden;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #222;
+  margin: 0;
+  background-color: #fefee9;
+}
