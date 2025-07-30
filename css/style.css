@@ -59,7 +59,26 @@
 section.card {
   opacity: 0;
   animation-fill-mode: forwards;
-  animation: slideIn 1s ease 0.5s forwards;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  margin: 32px auto;
+  max-width: 600px;
+  padding: 32px 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.card:nth-child(odd) {
+  animation-name: slideFromRight;
+}
+
+section.card:nth-child(even) {
+  animation-name: slideFromLeft;
 }
 
 body {
