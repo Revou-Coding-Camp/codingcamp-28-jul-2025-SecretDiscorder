@@ -1,3 +1,7 @@
+document.addEventListener('gesturestart', function (e) {
+  e.preventDefault();
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   // Prompt welcome message
   const name = prompt("Masukkan nama Anda:");
