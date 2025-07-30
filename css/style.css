@@ -193,13 +193,19 @@ nav ul li a:hover {
 }
 
 section.card {
-  width: 800px;     
-  max-width: 100%;    
+  width: 800px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+  background: #fff;
+  padding: 32px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  opacity: 1 !important;
+  position: relative;
+  animation: none !important;
 }
-
 
 section.card:hover {
   transform: translateY(-4px);
