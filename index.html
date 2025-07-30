@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Company Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body style="animation: fadePage 4s ease;">
+
+  <nav>
+    <img src="https://kartinisoft.com/wp-content/uploads/2018/12/cropped-kartinisoftlogo-1.png" height="70px" width="70px" alt="Logo" class="logo" />
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#profile">Our Profile</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#messageForm">Message Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <section class="card card-zigzag" id="home">
+    <h1 id="welcome-message1">Hi <span id="welcomeName">Harfi</span>, Welcome to Our Company</h1>
+    <h4>Kami membangun solusi digital berdampak</h4>
+    <img src="https://kartinisoft.com/wp-content/uploads/2018/12/cropped-kartinisoftlogo-1.png" alt="Company Profile Banner" />
+  </section>
+
+  <!-- OUR PROFILE -->
+  <section class="card card-zigzag" id="profile">
+    <h1>Our Company Profile</h1>
+    <h2>Tentang Perusahaan</h2>
+    <p>
+      Kami adalah perusahaan teknologi yang fokus pada pengembangan solusi digital kreatif dan berdampak sosial.
+      Didirikan pada tahun 2020, visi kami adalah memberdayakan generasi muda untuk berinovasi dan memimpin di era digital.
+    </p>
+
+    <h2>Visi</h2>
+    <p>Menjadi pelopor solusi digital yang mendukung transformasi pendidikan dan bisnis di Indonesia.</p>
+
+    <h2>Misi</h2>
+    <ul>
+      <li>Mengembangkan aplikasi inovatif yang terjangkau dan bermanfaat luas.</li>
+      <li>Menyediakan pelatihan digital untuk anak muda dan UMKM.</li>
+      <li>Menjalin kemitraan strategis untuk memperluas dampak sosial dan teknologi.</li>
+    </ul>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="card card-zigzag" id="portfolio">
+    <h1>Our Portfolio</h1>
+    <section class="headmasters-list">
+      <div class="headmaster-card">
+        <a href="https://www.linkedin.com/in/bima-adhi-pratama-kharis" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+        </a>
+        <h3>LinkedIn</h3>
+        <p>Profil profesional dan aktivitas kerja</p>
+      </div>
+      <div class="headmaster-card">
+        <a href="https://github.com/SecretDiscorder" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
+        </a>
+        <h3>GitHub</h3>
+        <p>Koleksi proyek dan source code</p>
+      </div>
+      <div class="headmaster-card">
+        <a href="https://www.youtube.com/@secretdiscorder" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+        </a>
+        <h3>YouTube</h3>
+        <p>Konten video dokumentasi proyek</p>
+      </div>
+    </section>
+  </section>
+
+  <!-- MESSAGE US -->
+  <section class="card card-zigzag">
+    <h1>Message Us</h1>
+    <section class="message-section">
+      <form id="messageForm" class="message-form" novalidate>
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required placeholder="Masukkan nama" />
+
+        <label for="dob">Tanggal Lahir:</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <div class="gender-group">
+          <label>Jenis Kelamin:</label>
+          <label><input type="radio" name="gender" value="Laki-laki" required /> Laki-laki</label>
+          <label><input type="radio" name="gender" value="Perempuan" /> Perempuan</label>
+          <label><input type="radio" name="gender" value="Lainnya" /> Lainnya</label>
+        </div>
+
+        <label for="message">Pesan:</label>
+        <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+
+        <button type="submit">Kirim</button>
+      </form>
+
+      <div id="infoBox" class="output-box"></div>
+    </section>
+  </section>
+
+  <script src="./js/script.js"></script>
+
+</body>
+<footer>Created by Bima Adhi Pratama Kharis</footer>
+</html>
