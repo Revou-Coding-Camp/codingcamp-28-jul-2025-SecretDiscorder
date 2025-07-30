@@ -139,12 +139,6 @@ nav ul li a:hover {
   color: #0a3d62;
 }
 
-@media (min-width: 1024px) {
-  section.card {
-    max-width: 960px;
-  }
-}
-
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
