@@ -429,3 +429,18 @@ body {
   margin: 0;
   background-color: #fefee9;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 28px;
+  background-color: #fff9b1; /* warna sticky note */
+  color: #333;
+  padding: 16px 24px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+  line-height: 1.4;
+  max-width: 100%;
+}
