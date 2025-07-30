@@ -1,80 +1,108 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>My Website</title>
-<link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Company Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
   <nav>
-    <img src="https://storage.googleapis.com/danacita-website-v3-prd/website_v3/images/Logo-RevoU-5_1.original.png" height="70px" width="70px" alt="Logo" class="logo" />
+    <img src="https://kartinisoft.com/wp-content/uploads/2018/12/cropped-kartinisoftlogo-1.png" height="70px" width="70px" alt="Logo" class="logo" />
     <ul>
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="profile.html">Our Profile</a></li>
-      <li><a href="https://github.com/SecretDiscorder">Portfolio</a></li>
-      <li><a href="./index.html#messageForm">Message Us</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#profile">Our Profile</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#messageForm">Message Us</a></li>
     </ul>
   </nav>
 
-  <section class="card">
-    <h1 id="welcome-message1">Hi <span id="welcomeName">Harfi</span>, Welcome to Website</h1>
-    <h4>Ini adalah website latihan pertama</h4>
-    <img src="https://i.etsystatic.com/30727073/r/il/4406e3/5942605468/il_340x270.5942605468_ch9o.jpg" alt="Sample Image" />
+  <!-- HOME SECTION -->
+  <section class="card" id="home">
+    <h1 id="welcome-message1">Hi <span id="welcomeName">Harfi</span>, Welcome to Our Company</h1>
+    <h4>Kami membangun solusi digital berdampak</h4>
+    <img src="https://kartinisoft.com/wp-content/uploads/2018/12/cropped-kartinisoftlogo-1.png" alt="Company Profile Banner" />
   </section>
-  <section class="card">
-    <h1 id="welcome-message">Our Headquarter</h1>
-  <section class="headmasters-list">
-    <div class="headmaster-card">
-      <img src="https://upload.wikimedia.org/wikipedia/id/thumb/b/b1/Merdeka_Square_Monas_02.jpg/250px-Merdeka_Square_Monas_02.jpg" alt="Jakarta" />
-      <h3>Jakarta</h3>
-      <p>Headquarter</p>
-    </div>
-    <div class="headmaster-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Gedung_Sate_Oktober_2024_-_Rahmatdenas.jpg/250px-Gedung_Sate_Oktober_2024_-_Rahmatdenas.jpg" alt="Bandung" />
-      <h3>Bandung</h3>
-      <p>Headquarter</p>
-    </div>
-    <div class="headmaster-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Patung_suroboyo.jpg/669px-Patung_suroboyo.jpg" alt="Surabaya" />
-      <h3>Surabaya</h3>
-      <p>Headquarter</p>
-    </div>
-  </section>
-  </section>
-  <section class="card">
-    <h1 id="welcome-message">Message Us</h1>
-  <section class="message-section">
-    <form id="messageForm" class="message-form" novalidate>
-      <label for="name">Nama:</label>
-      <input type="text" id="name" name="name" required placeholder="Masukkan nama" />
 
-      <label for="dob">Tanggal Lahir:</label>
-      <input type="date" id="dob" name="dob" required />
+  <!-- OUR PROFILE -->
+  <section class="card" id="profile">
+    <h1>Our Company Profile</h1>
+    <h2>Tentang Perusahaan</h2>
+    <p>
+      Kami adalah perusahaan teknologi yang fokus pada pengembangan solusi digital kreatif dan berdampak sosial.
+      Didirikan pada tahun 2020, visi kami adalah memberdayakan generasi muda untuk berinovasi dan memimpin di era digital.
+    </p>
 
-      <div class="gender-group">
-        <label>Jenis Kelamin:</label>
-        <label><input type="radio" name="gender" value="Laki-laki" required /> Laki-laki</label>
-        <label><input type="radio" name="gender" value="Perempuan" /> Perempuan</label>
-        <label><input type="radio" name="gender" value="Lainnya" /> Lainnya</label>
+    <h2>Visi</h2>
+    <p>Menjadi pelopor solusi digital yang mendukung transformasi pendidikan dan bisnis di Indonesia.</p>
+
+    <h2>Misi</h2>
+    <ul>
+      <li>Mengembangkan aplikasi inovatif yang terjangkau dan bermanfaat luas.</li>
+      <li>Menyediakan pelatihan digital untuk anak muda dan UMKM.</li>
+      <li>Menjalin kemitraan strategis untuk memperluas dampak sosial dan teknologi.</li>
+    </ul>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="card" id="portfolio">
+    <h1>Our Portfolio</h1>
+    <section class="headmasters-list">
+      <div class="headmaster-card">
+        <a href="https://www.linkedin.com/in/bima-adhi-pratama-kharis" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+        </a>
+        <h3>LinkedIn</h3>
+        <p>Profil profesional dan aktivitas kerja</p>
       </div>
-
-      <label for="message">Pesan:</label>
-      <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
-
-      <button type="submit">Kirim</button>
-    </form>
-
-    <div id="infoBox" class="output-box" style="margin-top: 1rem;"></div>
-    
-      <!-- Output hasil validasi akan muncul di sini -->
-      <em>Hasil validasi dan pesan akan muncul di sini setelah submit.</em>
-    </div>
+      <div class="headmaster-card">
+        <a href="https://github.com/SecretDiscorder" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
+        </a>
+        <h3>GitHub</h3>
+        <p>Koleksi proyek dan source code</p>
+      </div>
+      <div class="headmaster-card">
+        <a href="https://www.youtube.com/@secretdiscorder" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+        </a>
+        <h3>YouTube</h3>
+        <p>Konten video dokumentasi proyek</p>
+      </div>
+    </section>
   </section>
-  </section>
-<script src="./js/script.js"></script>
 
+  <!-- MESSAGE US -->
+  <section class="card">
+    <h1>Message Us</h1>
+    <section class="message-section">
+      <form id="messageForm" class="message-form" novalidate>
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required placeholder="Masukkan nama" />
+
+        <label for="dob">Tanggal Lahir:</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <div class="gender-group">
+          <label>Jenis Kelamin:</label>
+          <label><input type="radio" name="gender" value="Laki-laki" required /> Laki-laki</label>
+          <label><input type="radio" name="gender" value="Perempuan" /> Perempuan</label>
+          <label><input type="radio" name="gender" value="Lainnya" /> Lainnya</label>
+        </div>
+
+        <label for="message">Pesan:</label>
+        <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+
+        <button type="submit">Kirim</button>
+      </form>
+
+      <div id="infoBox" class="output-box"></div>
+    </section>
+  </section>
+
+  <script src="./js/script.js"></script>
 
 </body>
-  <footer>Created by Bima Adhi Pratama Kharis</footer>
+<footer>Created by Bima Adhi Pratama Kharis</footer>
 </html>
