@@ -204,6 +204,7 @@ section.card {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   opacity: 1 !important;
   position: relative;
+  gap: 8px;
   animation: none !important;
   justify-content: space-between; 
 }
