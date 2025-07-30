@@ -2,27 +2,32 @@
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Company Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>My Website - Company Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="https://kartinisoft.com/wp-content/uploads/2018/12/cropped-kartinisoftlogo-1.png" />
 </head>
 <body style="animation: fadePage 4s ease;">
 
-  <nav>
-    <img src="https://kartinisoft.com/wp-content/uploads/2018/12/cropped-kartinisoftlogo-1.png" height="70px" width="70px" alt="Logo" class="logo" />
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#profile">Our Profile</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#messageForm">Message Us</a></li>
-    </ul>
-  </nav>
+<nav id="mainNav">
+  <img src="https://kartinisoft.com/wp-content/uploads/2018/12/cropped-kartinisoftlogo-1.png" height="70px" width="70px" alt="Logo" class="logo" />
+  <button class="hamburger nav-toggle" id="hamburgerBtn">☰</button>
+
+
+  <ul id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#profile">Our Profile</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#messageForm">Message Us</a></li>
+  </ul>
+</nav>
+
 
   <!-- HOME SECTION -->
   <section class="card card-zigzag" id="home">
     <h1 id="welcome-message1">Hi <span id="welcomeName">Harfi</span>, Welcome to Our Company</h1>
-    <h4>Kami membangun solusi digital berdampak</h4>
-    <img src="https://kartinisoft.com/wp-content/uploads/2018/12/cropped-kartinisoftlogo-1.png" alt="Company Profile Banner" class="banner-image full-banner" />
+    <h6>Kami membangun solusi digital berdampak</h4>
+    <img src="https://kartinisoft.com/wp-content/uploads/2018/12/cropped-kartinisoftlogo-1.png" alt="Company Profile Banner" />
   </section>
 
   <!-- OUR PROFILE -->
@@ -34,20 +39,22 @@
       Didirikan pada tahun 2020, visi kami adalah memberdayakan generasi muda untuk berinovasi dan memimpin di era digital.
     </p>
 
-    <h2>Visi</h2>
-    <p>Menjadi pelopor solusi digital yang mendukung transformasi pendidikan dan bisnis di Indonesia.</p>
+<h2>📌 Visi</h2>
+<p class="highlight-text">Menjadi pelopor solusi digital yang mendukung transformasi pendidikan dan bisnis di Indonesia.</p>
 
-    <h2>Misi</h2>
-    <ul>
-      <li>Mengembangkan aplikasi inovatif yang terjangkau dan bermanfaat luas.</li>
-      <li>Menyediakan pelatihan digital untuk anak muda dan UMKM.</li>
-      <li>Menjalin kemitraan strategis untuk memperluas dampak sosial dan teknologi.</li>
+<h2>🎯 Misi</h2>
+<ul class="mission-list">
+  <span>💡</span><li> Mengembangkan aplikasi inovatif yang terjangkau dan bermanfaat luas.</li>
+  <span>👨‍🏫</span><li>Menyediakan pelatihan digital untuk anak muda dan UMKM.</li>
+  <span>🤝</span><li>Menjalin kemitraan strategis untuk memperluas dampak sosial dan teknologi.</li>
+</ul>
+
     </ul>
   </section>
 
   <!-- PORTFOLIO -->
   <section class="card card-zigzag" id="portfolio">
-    <h1>Our Portfolio</h1>
+    <h1>Our Portofolio</h1>
     <section class="headmasters-list">
       <div class="headmaster-card">
         <a href="https://www.linkedin.com/in/bima-adhi-pratama-kharis" target="_blank">
@@ -85,9 +92,9 @@
         <input type="date" id="dob" name="dob" required />
 
         <div class="gender-group">
-          <label>Jenis Kelamin:</label>
-          <label><input type="radio" name="gender" value="Laki-laki" required /> Laki-laki</label>
-          <label><input type="radio" name="gender" value="Perempuan" /> Perempuan</label>
+          <label>Jenis Kelamin:</label> <br>
+          <label><input type="radio" name="gender" value="Laki-laki" required /> Laki-laki</label> <br>
+          <label><input type="radio" name="gender" value="Perempuan" /> Perempuan</label> <br>
           <label><input type="radio" name="gender" value="Lainnya" /> Lainnya</label>
         </div>
 
@@ -104,5 +111,8 @@
   <script src="./js/script.js"></script>
 
 </body>
-<footer>Created by Bima Adhi Pratama Kharis</footer>
+<footer>
+  © RevoU 2025 Mini Coding Project | Bima Adhi Pratama Kharis
+</footer>
+
 </html>
