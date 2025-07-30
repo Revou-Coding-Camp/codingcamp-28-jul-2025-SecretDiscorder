@@ -1,10 +1,19 @@
+/* GLOBAL STYLES */
 body {
   background-color: #FFFFE0;
   margin: 0;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
+  font-size: 12px;
 }
 
+h1, h2, h3, h4 {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+/* NAVIGATION */
 nav {
   display: flex;
   align-items: center;
@@ -30,10 +39,6 @@ nav ul {
   padding: 0;
 }
 
-nav ul li {
-  width: auto;
-}
-
 nav ul li a {
   text-decoration: none;
   color: #0a3d62;
@@ -50,7 +55,7 @@ nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-
+/* CARD SECTIONS */
 section.card {
   max-width: 1200px;
   margin: 20px auto;
@@ -59,13 +64,6 @@ section.card {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   box-sizing: border-box;
-}
-
-section.card h1,
-section.card h2,
-section.card h4 {
-  margin: 0 0 10px 0;
-  color: #333;
 }
 
 section.card img {
@@ -128,12 +126,13 @@ section.card img {
   font-style: italic;
 }
 
+/* MESSAGE SECTION */
 .message-section {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;      /* desktop horizontal */
   justify-content: space-between;
   align-items: flex-start;
-  gap: 40px;
+  gap: 20px;
   max-width: 1200px;
   margin: 40px auto;
   padding: 32px;
@@ -145,11 +144,12 @@ section.card img {
 
 .message-form,
 .output-box {
-  flex: 1;
-  max-width: 48%;
+  flex: 1 1 48%;
   width: 100%;
+  max-width: none;
 }
 
+/* FORM STYLES */
 .message-form {
   display: flex;
   flex-direction: column;
@@ -178,37 +178,6 @@ section.card img {
   min-height: 120px;
 }
 
-.message-form button {
-  align-self: flex-start;
-  background-color: #0a3d62;
-  color: white;
-  padding: 10px 18px;
-  font-size: 14px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.message-form button:hover {
-  background-color: #083053;
-}
-
-.output-box {
-  background-color: #e0f7ff;
-  border: 1px solid #c6eaf5;
-  padding: 20px;
-  border-radius: 8px;
-  font-family: monospace;
-  font-size: 13px;
-  color: #033e6b;
-  min-height: 280px;
-  white-space: pre-wrap;
-  box-sizing: border-box;
-  overflow-y: auto;
-}
-
-
 .gender-group {
   margin-bottom: 16px;
 }
@@ -218,13 +187,15 @@ section.card img {
   margin-right: 12px;
 }
 
+/* BUTTON */
 .message-form button {
+  align-self: flex-start;
   background-color: #0a3d62;
   color: white;
-  border: none;
   padding: 12px 20px;
   font-size: 16px;
   border-radius: 6px;
+  border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -233,27 +204,29 @@ section.card img {
   background-color: #083053;
 }
 
+/* OUTPUT BOX */
 .output-box {
-  flex: 1 1 100%;
-  max-width: 500px;
-  background: #e0f7ff;
-  border-radius: 12px;
+  background-color: #e0f7ff;
+  border: 1px solid #c6eaf5;
   padding: 20px;
-  box-sizing: border-box;
-  white-space: pre-wrap;
-  font-family: monospace, monospace;
+  border-radius: 12px;
+  font-family: monospace;
+  font-size: 13px;
   color: #033e6b;
-  overflow-y: auto;
   min-height: 300px;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
+/* FOOTER */
 footer {
   text-align: right;
   padding: 10px 20px;
   color: #444;
 }
 
-/* MEDIA QUERY for mobile */
+/* RESPONSIVE FOR MOBILE */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -266,43 +239,15 @@ footer {
   }
 
   .message-section {
-    flex-direction: column;
+    flex-direction: column;  /* ubah jadi vertical */
+    gap: 20px;
+    padding: 20px;
   }
 
   .message-form,
   .output-box {
     max-width: 100%;
+    width: 100%;
+    flex: none;
   }
-}
-
-
-body, input, button, textarea {
-  font-size: 12px;
-}
-
-h1, h2, h3, h4 {
-  font-size: 16px;
-}
-
-.message-section {
-  flex-direction: row; 
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-/* Form di kiri */
-.message-form {
-  flex: 1 1 48%;
-}
-
-/* Output di kanan */
-.output-box {
-  flex: 1 1 48%;
-}
-
-//* Batasi lebar maksimal konten agar tidak mepet pinggir */
-body, .card, .message-section {
-  padding-left: 12px;
-  padding-right: 12px;
 }
