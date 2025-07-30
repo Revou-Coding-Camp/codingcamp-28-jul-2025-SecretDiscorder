@@ -194,7 +194,7 @@ nav ul li a:hover {
 
 section.card {
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   margin: 32px auto;
   padding: 32px 20px;
   box-sizing: border-box;
