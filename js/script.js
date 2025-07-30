@@ -42,5 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
       `Pesan        : ${message}\n\n`;
 
     form.reset(); // opsional, untuk reset form setelah submit berhasil
+    if (name) {
+      document.getElementById("welcome-message1").textContent = `Hi ${name}, Welcome to Website`;
+    }
+  
   });
 });
