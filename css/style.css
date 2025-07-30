@@ -1,32 +1,109 @@
-/* GLOBAL STYLES */
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+section.card {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.card-zigzag:nth-of-type(odd) {
+  animation: slideFromRight 1s ease forwards;
+}
+
+.card-zigzag:nth-of-type(even) {
+  animation: slideFromLeft 1s ease forwards;
+}
+
+@keyframes fadePage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+section.card {
+  animation: slideIn 1s ease forwards;
+  opacity: 0;
+  animation-delay: 0.5s;
+}
+
+h1 {
+  font-size: 24px;
+  color: #0a3d62;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 20px;
+  color: #3c6382;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+#profile p,
+#profile ul {
+  text-align: justify;
+}
+
 body {
-  background-color: #FFFFE0;
+  background-color: #fefee9;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
   overflow-x: hidden;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 h1, h2, h3, h4 {
-  font-size: 16px;
-  margin: 0 0 10px 0;
-  color: #333;
+  font-size: 20px;
+  margin: 0 0 12px 0;
+  color: #222;
 }
 
-/* NAVIGATION */
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to right, #FFFFE0, #e0f7ff);
-  padding: 10px 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #ffffe0, #e0f7ff);
+  padding: 12px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   flex-wrap: wrap;
 }
 
 nav .logo {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -34,7 +111,7 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  gap: 16px;
+  gap: 12px;
   margin: 10px 0 0 0;
   padding: 0;
 }
@@ -43,27 +120,32 @@ nav ul li a {
   text-decoration: none;
   color: #0a3d62;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   white-space: nowrap;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
   transition: background-color 0.3s ease;
   display: block;
 }
 
 nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* CARD SECTIONS */
 section.card {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  background: #fff;
+  border-radius: 16px;
+  max-width: 960px;
+  margin: 32px auto;
+  padding: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+section.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
 section.card img {
@@ -71,14 +153,11 @@ section.card img {
   height: auto;
   display: block;
   margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-/* HEADMASTERS */
 .headmasters-list {
-  max-width: 1200px;
-  margin: 40px auto;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
@@ -86,74 +165,64 @@ section.card img {
 }
 
 .headmaster-card {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 240px;
   width: 100%;
-  max-width: 220px;
-  padding: 16px;
-  box-sizing: border-box;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: box-shadow 0.3s ease;
 }
 
 .headmaster-card:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .headmaster-card img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4/3;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  display: block;
 }
 
 .headmaster-card h3 {
-  margin: 0 0 6px 0;
+  font-size: 18px;
   color: #0a3d62;
-  font-size: 20px;
+  margin: 0 0 6px;
 }
 
 .headmaster-card p {
-  margin: 0;
-  color: #555;
   font-size: 14px;
+  color: #555;
   font-style: italic;
+  margin: 0;
 }
 
-/* MESSAGE SECTION */
 .message-section {
   display: flex;
-  flex-direction: row;      /* desktop horizontal */
+  flex-direction: row;
+  gap: 32px;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  max-width: 1200px;
+  max-width: 960px;
   margin: 40px auto;
   padding: 32px;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
 }
 
 .message-form,
 .output-box {
-  flex: 1 1 48%;
-  width: 100%;
-  max-width: none;
+  flex: 1;
 }
 
-/* FORM STYLES */
 .message-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .message-form label {
@@ -165,68 +234,64 @@ section.card img {
 .message-form input[type="text"],
 .message-form input[type="date"],
 .message-form textarea {
-  font-size: 13px;
+  font-size: 14px;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   width: 100%;
   box-sizing: border-box;
 }
 
 .message-form textarea {
-  resize: vertical;
   min-height: 120px;
+  resize: vertical;
 }
 
 .gender-group {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .gender-group label {
-  font-weight: normal;
+  font-weight: 400;
   margin-right: 12px;
 }
 
-/* BUTTON */
 .message-form button {
-  align-self: flex-start;
   background-color: #0a3d62;
-  color: white;
+  color: #fff;
   padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 6px;
+  font-size: 15px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .message-form button:hover {
-  background-color: #083053;
+  background-color: #073257;
 }
 
-/* OUTPUT BOX */
 .output-box {
-  background-color: #e0f7ff;
-  border: 1px solid #c6eaf5;
+  background: #e0f7ff;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 16px;
   font-family: monospace;
   font-size: 13px;
-  color: #033e6b;
   min-height: 300px;
   white-space: pre-wrap;
+  color: #033e6b;
+  border: 1px solid #c6eaf5;
   overflow-y: auto;
   box-sizing: border-box;
 }
 
-/* FOOTER */
 footer {
   text-align: right;
-  padding: 10px 20px;
-  color: #444;
+  padding: 12px 24px;
+  color: #666;
+  font-size: 13px;
 }
 
-/* RESPONSIVE FOR MOBILE */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -235,19 +300,22 @@ footer {
 
   nav ul {
     flex-direction: column;
-    gap: 10px;
+    width: 100%;
   }
 
   .message-section {
-    flex-direction: column;  /* ubah jadi vertical */
-    gap: 20px;
-    padding: 20px;
+    flex-direction: column;
+    padding: 24px;
   }
 
   .message-form,
   .output-box {
     max-width: 100%;
     width: 100%;
-    flex: none;
+  }
+
+  section.card {
+    margin: 16px 16px;
+    padding: 24px;
   }
 }
