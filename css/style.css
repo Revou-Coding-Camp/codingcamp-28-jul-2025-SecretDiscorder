@@ -48,16 +48,7 @@
 section.card {
   opacity: 0;
   animation-fill-mode: forwards;
-}
-
-.card-zigzag:nth-of-type(odd) {
-  animation: slideFromRight 1s ease forwards;
-  animation-delay: 0.2s;
-}
-
-.card-zigzag:nth-of-type(even) {
-  animation: slideFromLeft 1s ease forwards;
-  animation-delay: 0.2s;
+  animation: slideIn 1s ease 0.5s forwards;
 }
 
 body {
