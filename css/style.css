@@ -45,6 +45,17 @@
   }
 }
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 section.card {
   opacity: 0;
   animation-fill-mode: forwards;
@@ -57,7 +68,6 @@ body {
   font-family: "Segoe UI", sans-serif;
   overflow-x: hidden;
   font-size: 14px;
-  animation: fadePage 0.8s ease-in;
 }
 
 h1 {
