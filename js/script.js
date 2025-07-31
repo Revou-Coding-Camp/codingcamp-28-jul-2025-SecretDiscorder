@@ -42,25 +42,20 @@ form.addEventListener('submit', function(e) {
   }
 
   const now = new Date();
-  const currentTime = now.toLocaleString();
+    const currentTime = now.toLocaleString();
 
-  Swal.fire({
-    icon: 'success',
-    title: 'Pesan Terkirim!',
-    html: `
-      <b>Waktu Submit:</b> ${currentTime}<br>
-      <b>Nama:</b> ${name}<br>
-      <b>Tanggal Lahir:</b> ${dob}<br>
-      <b>Jenis Kelamin:</b> ${gender}<br>
-      <b>Pesan:</b> ${message}
-    `,
-    confirmButtonText: 'Tutup'
-  });
+    output.innerHTML =
+      `Pesan berhasil dikirim!\n\n` +
+      `Waktu submit : ${currentTime}\n` +
+      `Nama         : ${name}\n` +
+      `Tanggal Lahir: ${dob}\n` +
+      `Jenis Kelamin: ${gender}\n` +
+      `Pesan        : ${message}\n\n`;
 
-  form.reset();
-  if (name) {
-    document.getElementById("welcome-message1").textContent = `Hi ${name}, Welcome to Website`;
-  }
+    form.reset(); // opsional, untuk reset form setelah submit berhasil
+    if (name) {
+      document.getElementById("welcome-message1").textContent = `Hi ${name}, Welcome to Website`;
+    }
 });
 
 });
